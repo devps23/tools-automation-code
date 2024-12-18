@@ -14,8 +14,12 @@
     dest: /opt/prometheus
     remote_src: yes
 
-#- name: unarchive prometheus
-#  ansible.builtin.unarchive:
-#    src: /opt
-#    dest: /opt/prometheus
-#    remote_src: yes
+- name: copy prometheus service
+  ansible.builtin.template:
+    src: prometheus.service
+    dest: /etc/systemd/system/prometheus.service
+
+- name: Start Prometheus Server
+  ansible.builtin.systemd_service:
+    name: prometheus
+    state: started
