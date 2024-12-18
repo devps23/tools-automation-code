@@ -2,11 +2,15 @@
   ansible.builtin.file:
     path: /opt/prometheus
     state: absent
+    owner: bin
+    group: bin
 
 - name: make a directory
   ansible.builtin.file:
     path: /opt/prometheus
     state: directory
+    owner: bin
+    group: bin
 
 - name: Download and unarchive prometheus
   ansible.builtin.unarchive:
