@@ -8,13 +8,13 @@
     path: /opt/prometheus
     state: directory
 
-- name: Download prometheus
+- name: Download and unarchive prometheus
   ansible.builtin.get_url:
-    url: https://github.com/prometheus/prometheus/releases/download/v3.0.1/prometheus-3.0.1.linux-amd64.tar.gz
+    src: https://github.com/prometheus/prometheus/releases/download/v3.0.1/prometheus-3.0.1.linux-amd64.tar.gz
     dest: /opt/prometheus
 
-- name: unarchive prometheus
-  ansible.builtin.unarchive:
-    src: /opt
-    dest: /opt/prometheus
-    remote_src: yes
+#- name: unarchive prometheus
+#  ansible.builtin.unarchive:
+#    src: /opt
+#    dest: /opt/prometheus
+#    remote_src: yes
