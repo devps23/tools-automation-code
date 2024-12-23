@@ -36,20 +36,20 @@ resource "aws_iam_instance_profile" "instance_profile" {
 }
 # to allow which services are allowed for ec2 instances,for this we have to create inline policy
 # here aws_iam_role_policy is an inline policy to create an inline policy and attached to the role
-# resource "aws_iam_role_policy" "iam_role_policy" {
-#   name = "${var.tag_name}-inline-policy"
-#   role = aws_iam_role.instance_role.id
-#   policy = jsonencode({
-#     Version = "2012-10-17"
-#     Statement = [
-#       {
-#         Action = [
-#           "ec2:Describe*",
-#         ]
-#         Effect   = "Allow"
-#         Resource = "*"
-#       },
-#     ]
-#   })
-# }
+resource "aws_iam_role_policy" "iam_role_policy" {
+  name = "${var.tag_name}-inline-policy"
+  role = aws_iam_role.instance_role.id
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          " ec2:DescribeInstances",
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      },
+    ]
+  })
+}
 
