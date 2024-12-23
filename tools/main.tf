@@ -33,6 +33,9 @@ resource "aws_iam_role" "instance_role" {
 resource "aws_iam_instance_profile" "instance_profile" {
   name = "${var.tag_name}-instance-profile"
   role = aws_iam_role.instance_role.name
+  tags = {
+    Name = "${var.tag_name}-instance-profile"
+  }
 }
 # to allow which services are allowed for ec2 instances,for this we have to create inline policy
 # here aws_iam_role_policy is an inline policy to create an inline policy and attached to the role
@@ -51,5 +54,6 @@ resource "aws_iam_role_policy" "iam_role_policy" {
       },
     ]
   })
+
 }
 
