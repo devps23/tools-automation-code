@@ -46,7 +46,7 @@ resource "aws_iam_role_policy" "iam_role_policy" {
     Version = "2012-10-17"
     Statement = [
       {
-        Action =["ec2:DescribeInstances"],
+        Action =var.policy_instance_type,
 
         Effect   = "Allow"
         Resource = "*"
