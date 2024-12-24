@@ -6,7 +6,7 @@ variable "tools" {
     }
     frontend = {
       instance_type= "t3.micro"
-      policy_instance_type=[]
+      policy_instance_type= []
     }
   }
 }
