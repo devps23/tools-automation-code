@@ -13,13 +13,20 @@ resource "aws_instance" "instance" {
     Name = var.tag_name
   }
 }
-resource "aws_route53_record" "route" {
+resource "aws_route53_record" "route-internal" {
   name         =   var.tag_name
   type         =   "A"
   zone_id      =   var.zone_id
   records      =   [aws_instance.instance.public_ip]
   ttl          =    50
 }
+# resource "aws_route53_record" "route" {
+#   name         =   var.tag_name
+#   type         =   "A"
+#   zone_id      =   var.zone_id
+#   records      =   [aws_instance.instance.private_ip]
+#   ttl          =    50
+# }
 #  to create an IAM role for an entity,here entity means ec2 resource
 # here "aws_iam_policy_document" is used to assume the role to grant the permission temporary for the role
 resource "aws_iam_role" "instance_role" {

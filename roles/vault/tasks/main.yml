@@ -3,6 +3,6 @@
 
 - name: Install vault
   ansible.builtin.dnf:
-    name:
-      - yum-utils
-      - vault
+    name: vault
+    state: installed
+

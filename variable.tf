@@ -1,13 +1,17 @@
 variable "tools" {
   default = {
-    prometheus={
-      instance_type="t3.micro"
-      policy_instance_type=["ec2:DescribeInstances"]
-    }
+#     prometheus={
+#       instance_type="t3.micro"
+#       policy_instance_type=["ec2:DescribeInstances"]
+#     }
     vault = {
       instance_type= "t3.micro"
       policy_instance_type= []
     }
+#     elk = {
+#       instance_type= "t3.large"
+#       policy_instance_type= []
+#     }
   }
 }
 
