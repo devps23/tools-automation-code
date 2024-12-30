@@ -1,0 +1,54 @@
+- name: copy elastic repo file
+  ansible.builtin.template:
+    src: elasticsearch.repo
+    dest: /etc/yum.repos.d/elasticsearch.repo
+
+
+- name: install elastic search
+  ansible.builtin.dnf:
+    name: elasticsearch
+    state: installed
+
+- name: start elastic search service
+  ansible.builtin.systemd_service:
+    name: elasticsearch
+    state: started
+    daemon-reload: yes
+    enabled: yes
+
+# install kibana
+# kibana is an ui to visualize elastic search data on kibana dashboard
+
+- name: install kibana
+  ansible.builtin.dnf:
+    name: kibana
+    state: installed
+
+# to update a single/multiple line
+# to search and update the single line in kibana
+# here ^ means to search from beginning
+# here line means to update a regexp
+
+- name: update server host
+  ansible.builtin.lineinfile:
+    path: /etc/kibana/kibana.yml
+    regexp: '^SELINUX='
+    line: SELINUX=enforcing
+
+- name: update server port
+  ansible.builtin.lineinfile:
+    path: /etc/kibana/kibana.yml
+    regexp: '^SELINUX='
+    line: SELINUX=enforcing
+
+- name: start kibana service
+  ansible.builtin.systemd_service:
+    name: kibana
+    state: started
+    daemon-reload: yes
+    enabled: yes
+
+
+
+
+
