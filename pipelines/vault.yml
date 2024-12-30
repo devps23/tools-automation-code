@@ -1,0 +1,30 @@
+format_version: 10
+pipelines:
+  vault:
+    group: tools
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      git-2ae7d73:
+        git: https://github.com/devps23/tools-automation-code.git
+        shallow_clone: false
+        auto_update: true
+        branch: main
+
+    stages:
+      tools:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: manual
+          allow_only_on_success: false
+        jobs:
+         vault-jobs:
+            timeout: 0
+            tasks:
+              - exec: { command: ansible-playbook, arguments: ["-i","vault-internal.pdevops72.online,","tools.yml","-e tool_name=vault","-e ansible_user=ec2-user","-e ansible_password=DevOps321", run_if: passed }
+
+
+

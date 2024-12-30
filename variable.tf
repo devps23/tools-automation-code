@@ -4,7 +4,7 @@ variable "tools" {
       instance_type="t3.micro"
       policy_instance_type=["ec2:DescribeInstances"]
     }
-    frontend = {
+    vault = {
       instance_type= "t3.micro"
       policy_instance_type= []
     }
