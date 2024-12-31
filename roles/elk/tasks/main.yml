@@ -3,7 +3,6 @@
     src: elasticsearch.repo
     dest: /etc/yum.repos.d/elasticsearch.repo
 
-
 - name: install elastic search
   ansible.builtin.dnf:
     name: elasticsearch
@@ -29,17 +28,17 @@
 # here ^ means to search from beginning
 # here line means to update a regexp
 
-- name: update server host
+- name: search and update server port
   ansible.builtin.lineinfile:
     path: /etc/kibana/kibana.yml
-    regexp: '^SELINUX='
-    line: SELINUX=enforcing
+    regexp: '^#server.port=5601'
+    line: "server.port=5601"
 
-- name: update server port
+- name: search and update server host
   ansible.builtin.lineinfile:
     path: /etc/kibana/kibana.yml
-    regexp: '^SELINUX='
-    line: SELINUX=enforcing
+    regexp: '^#server.host=localhost'
+    line: "server.host=0.0.0.0"
 
 - name: start kibana service
   ansible.builtin.systemd_service:
