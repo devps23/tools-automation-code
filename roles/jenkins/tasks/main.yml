@@ -35,6 +35,14 @@
     - plugins
     - admin-user
 
+- name: create a jobs on jenkins dashboard
+  community.general.jenkins_job:
+    config: "{{ lookup('file', 'templates/jenkins.xml') }}"
+    name: test
+    password: admin123
+    url: http://http://44.211.221.154/:8080
+    user: admin
+
 
 
 
