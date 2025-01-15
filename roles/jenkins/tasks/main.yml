@@ -37,10 +37,10 @@
 
 - name: create a jobs on jenkins dashboard
   community.general.jenkins_job:
-    config: "{{ lookup('file', 'templates/jenkins.xml') }}"
+    config: "{{ lookup('file', 'templates/pipeline.xml') }}"
     name: test
     password: admin123
-    url: http://http://44.211.221.154/:8080
+    url: http://44.211.221.154/:8080
     user: admin
 
 
