@@ -21,6 +21,11 @@
     enabled: true
     daemon_reload: true
 
+- name: remove a groovy directory
+  ansible.builtin.file:
+    path: "/var/lib/jenkins/init.groovy"
+    state: absent
+
 - name: make a groovy directory
   ansible.builtin.file:
     path: "/var/lib/jenkins/init.groovy"
