@@ -2,7 +2,7 @@
 - name: Install python-jenkins
   ansible.builtin.pip:
     name: python-jenkins
-    state: installed
+    state: latest
     executable: pip3.9
 
 - name: create a jobs on jenkins dashboard
