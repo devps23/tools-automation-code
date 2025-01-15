@@ -40,7 +40,7 @@
     config: "{{ lookup('file', 'templates/pipeline.xml') }}"
     name: test
     password: admin123
-    url: http://44.211.221.154/:8080
+    url: http://44.211.221.154:8080/
     user: admin
 
 
