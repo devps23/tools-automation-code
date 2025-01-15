@@ -1,3 +1,2 @@
-app_loc: /var/lib/jenkins
 jenkins_setup: false
 jenkins_job: false

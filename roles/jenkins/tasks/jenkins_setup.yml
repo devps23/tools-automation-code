@@ -29,7 +29,7 @@
 - name: copy all groovy files
   ansible.builtin.template:
     src: "{{item}}.groovy"
-    dest: "{{ app_loc }}/init.groovy"
+    dest: "/var/lib/jenkins/init.groovy"
   loop:
     - wizard
     - plugins
