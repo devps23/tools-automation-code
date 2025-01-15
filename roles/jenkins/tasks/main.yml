@@ -1,0 +1,23 @@
+- name: set sudo prompt
+  ansible.builtin.shell: sudo set-prompt jenkins
+
+- name: copy repo file
+  ansible.builtin.template:
+    src: jenkins.repo
+    dest: etc/yum.repos.d/jenkins.repo
+
+- name: Install jenkins
+  ansible.builtin.dnf:
+    name:
+      - fontconfig
+      - java-17-openjdk
+      - jenkins
+    state: installed
+
+- name: Enable and start jenkins service
+  ansible.builtin.systemd_service:
+    name: jenkins
+    state: started
+    enabled: true
+    daemon_reload: true
+
