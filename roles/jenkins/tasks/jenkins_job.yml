@@ -7,7 +7,7 @@
 
 - name: add jobs on jenkins
   ansible.builtin.template:
-    src: node.xml
+    src: pipeline.xml
     dest: /tmp/{{item}}.xml
   loop:
     - frontend
