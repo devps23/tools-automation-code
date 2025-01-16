@@ -10,5 +10,5 @@
     config: "{{ lookup('file', 'templates/pipeline.xml') }}"
     name: test
     password: "{{ secrets.jenkins_password}}"
-    url: http://jenkins-innternal.pdevops72.online:8080/
+    url: http://jenkins-internal.pdevops72.online:8080/
     user: "{{ secrets.jenkins_username }}"
