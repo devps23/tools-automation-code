@@ -1,8 +1,7 @@
 <?xml version='1.1' encoding='UTF-8'?>
-<org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject plugin="workflow-multibranch@800.v5f0a_a_660950e">
+<org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject plugin="workflow-multibranch@795.ve0cb_1f45ca_9a_">
     <actions/>
     <description></description>
-    <displayName>test</displayName>
     <properties/>
     <folderViews class="jenkins.branch.MultiBranchProjectViewHolder" plugin="branch-api@2.1208.vf528356feca_4">
         <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
@@ -11,7 +10,7 @@
     <icon class="jenkins.branch.MetadataActionFolderIcon" plugin="branch-api@2.1208.vf528356feca_4">
         <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
     </icon>
-    <orphanedItemStrategy class="com.cloudbees.hudson.plugins.folder.computed.DefaultOrphanedItemStrategy" plugin="cloudbees-folder@6.980.v5a_cc0cb_25881">
+    <orphanedItemStrategy class="com.cloudbees.hudson.plugins.folder.computed.DefaultOrphanedItemStrategy" plugin="cloudbees-folder@6.976.v4dc79fb_c458d">
         <pruneDeadBranches>true</pruneDeadBranches>
         <daysToKeep>-1</daysToKeep>
         <numToKeep>-1</numToKeep>
@@ -23,7 +22,7 @@
         <data>
             <jenkins.branch.BranchSource>
                 <source class="jenkins.plugins.git.GitSCMSource" plugin="git@5.7.0">
-                    <id>67a15134-3310-46e6-b2b1-2ab550d223c8</id>
+                    <id>1d9080cf-48ea-43c8-b82a-c4d3920e342f</id>
                     <remote>https://github.com/devps23/expense-{{item}}.git</remote>
                     <credentialsId></credentialsId>
                     <traits>
