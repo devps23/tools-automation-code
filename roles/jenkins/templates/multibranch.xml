@@ -23,8 +23,8 @@
         <data>
             <jenkins.branch.BranchSource>
                 <source class="jenkins.plugins.git.GitSCMSource" plugin="git@5.7.0">
-                    <id>67a15134-3310-46e6-b2b1-2ab550d223c8</id>
-                    <remote>https://github.com/devps23/expense-{{item}}.git</remote>
+                    <id>1b2e166d-23fe-4bf0-ad29-79ee476e6575</id>
+                    <remote>https://github.com/devps23/expense-{{item}}</remote>
                     <credentialsId></credentialsId>
                     <traits>
                         <jenkins.plugins.git.traits.BranchDiscoveryTrait/>
