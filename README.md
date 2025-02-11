@@ -46,6 +46,25 @@ Behaviour:
 * click on save and apply
 
 
+shared Library:
+===============
+* click on "Manage Jenkins"
+* click on "System"
+* Search "Global Pipeline Libraries"
+ ====================================
+* Library: expense
+* Default Version: main
+* Retrieval Method:
+==================
+* Modern SCM
+* Source Code Management:
+* ========================
+* Git
+* Project Repository: https://github.com/devps23/jenkins-shared-lib
+* click on save and apply
+* 
+
+
 CI / CD  pipeline
 =================
 * build an image 
