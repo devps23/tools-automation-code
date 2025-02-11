@@ -22,7 +22,7 @@
         <data>
             <jenkins.branch.BranchSource>
                 <source class="jenkins.plugins.git.GitSCMSource" plugin="git@5.7.0">
-                    <id>5c194979-7edc-46e1-b2ab-8ac08fbc0bb2</id>
+                    <id>7569c385-6ff8-4d35-9349-60bb70c82dfc</id>
                     <remote>https://github.com/devps23/expense-{{item}}</remote>
                     <credentialsId>ssh</credentialsId>
                     <traits>
