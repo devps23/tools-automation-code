@@ -62,8 +62,17 @@ shared Library:
 * Git
 * Project Repository: https://github.com/devps23/jenkins-shared-lib
 * click on save and apply
-* 
 
+http://jenkins-internal.pdevops72.online:8080/job/frontend/
+WebHook :
+=========
+* click on Multibranch pipelines: click on either backend/frontend
+* under "Build Configuration": 
+* =============================
+* click on "Scan by webhook"
+* Trigger Token: expense-token
+* click on ? (JENKINS_URL/multibranch-webhook-trigger/invoke?token=[Trigger token])
+http://jenkins-internal.pdevops72.online:8200/multibranch-webhook-trigger/invoke?token=expense-token
 
 CI / CD  pipeline
 =================

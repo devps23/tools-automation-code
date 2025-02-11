@@ -7,7 +7,7 @@
 
 - name: add jobs on jenkins
   ansible.builtin.template:
-    src: multibranch.xml
+    src: multibranch-webhook.xml
     dest: /tmp/{{item}}.xml
   loop:
     - frontend
