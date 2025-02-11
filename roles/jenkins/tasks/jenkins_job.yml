@@ -13,13 +13,25 @@
     - frontend
     - backend
 
+#- name: create a jobs on jenkins dashboard
+#  community.general.jenkins_job:
+#    config: "{{ lookup('file', '/tmp/{{item}}.xml') }}"
+#    name: "{{ item }}"
+#    password: "{{ secrets.jenkins_password}}"
+#    url: http://jenkins-internal.pdevops72.online:8080/
+#    user: "{{ secrets.jenkins_username }}"
+#  loop:
+#    - frontend
+#    - backend
+
+
 - name: create a jobs on jenkins dashboard
   community.general.jenkins_job:
     config: "{{ lookup('file', '/tmp/{{item}}.xml') }}"
     name: "{{ item }}"
-    password: "{{ secrets.jenkins_password}}"
+    password: "admin123"
     url: http://jenkins-internal.pdevops72.online:8080/
-    user: "{{ secrets.jenkins_username }}"
+    user: "admin"
   loop:
     - frontend
     - backend
