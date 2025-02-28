@@ -1,6 +1,6 @@
-- name: get secrets from vault
-  ansible.builtin.debug:
-    msg: "username: {{secrets.jenkins_username}}, password: {{secrets.jenkins_password}}"
+#- name: get secrets from vault
+#  ansible.builtin.debug:
+#    msg: "username: {{secrets.jenkins_username}}, password: {{secrets.jenkins_password}}"
 
 - name: include jenkins setup
   ansible.builtin.include_tasks:
