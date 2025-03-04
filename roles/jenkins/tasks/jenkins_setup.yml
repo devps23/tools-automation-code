@@ -14,10 +14,10 @@
       - jenkins
     state: installed
 
-- name: remove a groovy directory
-  ansible.builtin.file:
-    path: "/var/lib/jenkins/init.groovy"
-    state: absent
+#- name: remove a groovy directory
+#  ansible.builtin.file:
+#    path: "/var/lib/jenkins/init.groovy"
+#    state: absent
 
 - name: Enable and start jenkins service
   ansible.builtin.systemd_service:
@@ -26,16 +26,16 @@
     enabled: true
     daemon_reload: true
 
-- name: make a groovy directory
-  ansible.builtin.file:
-    path: "/var/lib/jenkins/init.groovy"
-    state: directory
+#- name: make a groovy directory
+#  ansible.builtin.file:
+#    path: "/var/lib/jenkins/init.groovy"
+#    state: directory
 
-- name: copy all groovy files
-  ansible.builtin.template:
-    src: "{{item}}.groovy"
-    dest: "/var/lib/jenkins/init.groovy"
-  loop:
-    - wizard
-    - plugins
-    - admin-user
+#- name: copy all groovy files
+#  ansible.builtin.template:
+#    src: "{{item}}.groovy"
+#    dest: "/var/lib/jenkins/init.groovy"
+#  loop:
+#    - wizard
+#    - plugins
+#    - admin-user
