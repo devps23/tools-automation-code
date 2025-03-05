@@ -1,5 +1,26 @@
 # practice-terraform
 
+how to install jenkins?
+* https://pkg.jenkins.io/redhat-stable/jenkins.repo
+jenkins.repo 
+============
+  [jenkins]
+  name=Jenkins-stable
+  baseurl=http://pkg.jenkins.io/redhat-stable
+  gpgcheck=1
+
+the above jenkins.repo file is added in /etc/yum.repos.d
+* rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+*  yum install fontconfig java-17-openjdk -y
+*  yum install jenkins
+* systemctl daemon-reload
+* systemctl enable jenkins
+* systemctl start jenkins
+* systemctl status jenkins
+the above steps are used to add jenkins repo file to install jenkins
+
+open the jenkins dashboard with public ip address with port 8080
+cat /var/lib/jenkins/secrets/initialAdminPassword
 
 SingleBranch Pipeline:
 ======================
