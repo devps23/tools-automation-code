@@ -1,0 +1,22 @@
+- name: copy jenkins repo
+  ansible.builtin.copy:
+    src: jenkins.repo
+    dest: /etc/yum.repos.d/jenkins.repo
+
+- name: install java and jenkins
+  ansible.builtin.dnf:
+    name:
+      - fontconfig
+      - java-17-openjdk
+      - jenkins
+    state: installed
+
+- name: start jenkins
+  ansible.builtin.systemd_system:
+    name: jenkins
+    state: started
+    daemon-reload: yes
+    enabled: yes
+
+
+# add groovy script for to skip initialiaztion on jenkins dashboard before login
