@@ -1,5 +1,5 @@
 - name: copy jenkins repo
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: jenkins.repo
     dest: /etc/yum.repos.d/jenkins.repo
 
