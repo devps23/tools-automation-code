@@ -19,4 +19,17 @@
     enabled: yes
 
 
-# add groovy script for to skip initialiaztion on jenkins dashboard before login
+# add groovy script for to skip initialization on jenkins dashboard before login
+
+- name: copy groovy scripts
+  ansible.builtin.template:
+    src: "{{item}}"
+    dest: /var/lib/jenkins/init.groovy.d/{{item}}
+    loop:
+      - wizard.groovy
+      - plugins.groovy
+      - admin-user.groovy
+
+# create jobs on jenkins dashboard
+
+
