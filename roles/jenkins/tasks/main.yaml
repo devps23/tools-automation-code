@@ -34,17 +34,25 @@
     - plugins.groovy
     - admin-user.groovy
 
-# create jobs on jenkins dashboard
-- name: Create a jenkins job
-  community.general.jenkins_job:
-    config: "{{ lookup('file', 'templates/pipeline-single.xml') }}"
-    name: "{{ item }}"
-    password: admin123
-    user: admin
-    url: http://jenkins-internal.pdevops78.online:8080
+- name: jenkins job
+  ansible.builtin.template:
+    src: templates/jobs/pipeline-single.xml
+    dest: /tmp/{{item}}.xml
   loop:
-    - frontend
-    - backend
+   - frontend
+   - backend
+
+# create jobs on jenkins dashboard
+#- name: Create a jenkins job
+#  community.general.jenkins_job:
+#    config: "{{ lookup('file', 'templates/pipeline-single.xml') }}"
+#    name: "{{ item }}"
+#    password: admin123
+#    user: admin
+#    url: http://jenkins-internal.pdevops78.online:8080
+#  loop:
+#    - frontend
+#    - backend
 
 
 
