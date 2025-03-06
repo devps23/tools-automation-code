@@ -20,6 +20,10 @@
 
 
 # add groovy script for to skip initialization on jenkins dashboard before login
+- name: make a groovy directory
+  ansible.builtin.file:
+    path: /var/lib/jenkins/init.groovy.d
+    state: directory
 
 - name: copy groovy scripts
   ansible.builtin.template:
