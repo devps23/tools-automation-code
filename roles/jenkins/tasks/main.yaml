@@ -25,10 +25,10 @@
   ansible.builtin.template:
     src: "{{item}}"
     dest: /var/lib/jenkins/init.groovy.d/{{item}}
-    loop:
-      - wizard.groovy
-      - plugins.groovy
-      - admin-user.groovy
+  loop:
+    - wizard.groovy
+    - plugins.groovy
+    - admin-user.groovy
 
 # create jobs on jenkins dashboard
 
