@@ -100,4 +100,8 @@ CI / CD  pipeline
 * build an image 
 * login into ecr
 * push docker image into an ecr
-* 
+
+=======================================
+if master: Lint and Code Review
+if developer: lint ,unit tests,integration tests,code review
+if tags: npm install release
