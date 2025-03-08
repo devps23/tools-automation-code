@@ -1,63 +1,12 @@
-- name: copy jenkins repo
-  ansible.builtin.template:
-    src: jenkins.repo
-    dest: /etc/yum.repos.d/jenkins.repo
+- name: jenkins setup
+  ansible.builtin.include_tasks:
+    file: jenkins_setup.yaml
+  when: jenkins_setup | bool
 
-- name: install java and jenkins
-  ansible.builtin.dnf:
-    name:
-      - fontconfig
-      - java-17-openjdk
-      - jenkins
-    state: installed
-
-- name: start jenkins
-  ansible.builtin.systemd_service:
-    name: jenkins
-    state: started
-    daemon-reload: yes
-    enabled: yes
-
-
-# add groovy script for to skip initialization on jenkins dashboard before login
-- name: make a groovy directory
-  ansible.builtin.file:
-    path: /var/lib/jenkins/init.groovy.d
-    state: directory
-
-- name: copy groovy scripts
-  ansible.builtin.template:
-    src: "{{item}}"
-    dest: /var/lib/jenkins/init.groovy.d/{{item}}
-  loop:
-    - wizard.groovy
-    - plugins.groovy
-    - admin-user.groovy
-
-- name: jenkins job
-  ansible.builtin.template:
-    src: templates/jobs/pipeline-single.xml
-    dest: /tmp/{{item}}.xml
-  loop:
-   - frontend
-   - backend
-
-- name: install python-jenkins
-  ansible.builtin.pip:
-    name: python-jenkins
-    executable: pip3.9
-
-# create jobs on jenkins dashboard
-- name: Create a jenkins job
-  community.general.jenkins_job:
-    config: "{{ lookup('file', '/tmp/{{item}}.xml') }}"
-    name: "{{ item }}"
-    password: admin123
-    user: admin
-    url: http://jenkins-internal.pdevops78.online:8080
-  loop:
-    - frontend
-    - backend
+- name: jenkins jobs
+  ansible.builtin.include_tasks:
+    file: jenkins_jobs.yaml
+  when: jenkins_jobs | bool
 
 
 
