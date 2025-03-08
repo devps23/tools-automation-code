@@ -13,6 +13,7 @@ final List<String> REQUIRED_PLUGINS = [
         "workflow-aggregator",
         "ws-cleanup",
         "blueocean",
+        "ssh-agent",
 ]
 
 if (Jenkins.instance.pluginManager.plugins.collect {
