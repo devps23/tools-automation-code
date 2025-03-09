@@ -34,10 +34,4 @@
     - plugins.groovy
     - admin-user.groovy
 
-- name: jenkins job
-  ansible.builtin.template:
-    src: templates/jobs/pipeline-single.xml
-    dest: /tmp/{{item}}.xml
-  loop:
-    - frontend
-    - backend
+
