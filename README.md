@@ -35,6 +35,13 @@ SingleBranch Pipeline:
 * Apply and save
 * to run node server through ssh , we need "SSH Build Agents" (Allows to launch agents over SSH using a java implementation of SSH protocol )
 
+disadvantages:
+==============
+* there are some disadvantages in "Single branch pipeline"
+1. for which branch we are running the code is not able to identify , to avoid this branch we can go for multibranch pipeline.
+
+
+
 how to add ci-server?
 =====================
 * ci-server is a node agent(instance/resource)
