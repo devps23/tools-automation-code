@@ -18,7 +18,7 @@
     config: "{{ lookup('file', '/tmp/{{item}}.xml') }}"
     name: "{{ item }}"
     password: "{{ secrets.jenkins_password}}"
-    url: http://jenkins-internal.pdevops72.online:8080/
+    url: http://jenkins-internal.pdevops78.online:8080/
     user: "{{ secrets.jenkins_username }}"
   loop:
     - frontend
