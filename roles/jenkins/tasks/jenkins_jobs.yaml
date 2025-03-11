@@ -1,6 +1,6 @@
 - name: jenkins job
   ansible.builtin.template:
-    src: templates/jobs/multibranch-pipeline.xml
+    src: templates/jobs/webhook.xml
     dest: /tmp/{{item}}.xml
   loop:
     - frontend

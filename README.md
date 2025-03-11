@@ -102,6 +102,7 @@ WebHook :
 * click on ? (JENKINS_URL/multibranch-webhook-trigger/invoke?token=[Trigger token])
 http://jenkins-internal.pdevops72.online:8200/multibranch-webhook-trigger/invoke?token=expense-token
   http://jenkins-internal.pdevops78.online:8200/multibranch-webhook-trigger/invoke?token=expense-backend
+*  JENKINS_URL/multibranch-webhook-trigger/invoke?token=[Trigger token]
 CI / CD  pipeline
 =================
 * build an image 
