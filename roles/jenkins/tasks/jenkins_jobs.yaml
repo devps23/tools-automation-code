@@ -4,7 +4,7 @@
     dest: /tmp/{{item}}.xml
   loop:
     - frontend
-    - backend
+    - catalogue
 
 
 - name: install python-jenkins
@@ -22,4 +22,4 @@
     user: admin
   loop:
     - frontend
-    - backend
+    - catalogue
