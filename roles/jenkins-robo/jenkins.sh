@@ -1,0 +1,1 @@
+ansible-playbook -i jenkins-internal.pdevops78.online, tools.yaml -e tool_name=jenkins -e ansible_user=ec2-user -e ansible_password=DevOps321 -e jenkins_setup=true -e jenkins_jobs=true
